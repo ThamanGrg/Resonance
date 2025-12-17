@@ -10,10 +10,6 @@ public class CharacterControl : MonoBehaviour
     [Header("Ground Check")]
     public ContactFilter2D contactFilter;
 
-    [Header("screenBound")]
-    private float minX;
-    private float maxX;
-    private float playerHalfWidthX;
 
     [Header("Movement")]
     private InputAction move;
@@ -24,14 +20,6 @@ public class CharacterControl : MonoBehaviour
 
     void Start()
     {
-        // Camera cam = Camera.main;
-
-        // float camHeight = cam.orthographicSize;
-        // float camWidth = camHeight * cam.aspect;
-        // playerHalfWidthX = GetComponent<SpriteRenderer>().bounds.size.x / 2;
-
-        // minX = cam.transform.position.x - camWidth + playerHalfWidthX;
-        // maxX = cam.transform.position.x + camWidth - playerHalfWidthX;
 
 
     }
@@ -50,15 +38,15 @@ public class CharacterControl : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        Move();
+        
     }
 
     [System.Obsolete]
     void FixedUpdate()
     {
+        Move();
         if (jump.IsPressed() && IsGrounded())
         {
-            print("grounded");
             Jump();
         }
 
@@ -72,6 +60,19 @@ public class CharacterControl : MonoBehaviour
     void Move()
     {
         float x = move.ReadValue<Vector2>().x;
+
+        if (x < 0)
+        {
+            transform.eulerAngles = Vector3.up * 180;
+            cameraFollow.xoffset = -4f;
+        }
+        if (x > 0)
+        {
+            transform.eulerAngles = Vector3.zero;
+            cameraFollow.xoffset = 4f;
+        }
+
+
         rb.velocity = new Vector2(x * speed, rb.velocity.y);
     }
 
@@ -82,8 +83,7 @@ public class CharacterControl : MonoBehaviour
     }
 
     bool IsGrounded()
-    {
+    { 
         return rb.IsTouching(contactFilter);
     }
-
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 public class cameraFollow : MonoBehaviour
 {
     public Transform player;
-    public float cameraFollowSpeed = 2f;
+    public float cameraFollowSpeed = 6f;
 
-    private float yoffset = 3.6f;
-    private float xoffset = 5.4f;
+    float ypos = 0.25f;
+    public static float xoffset;
     void Start()
     {
         
@@ -17,7 +17,7 @@ public class cameraFollow : MonoBehaviour
     // Update is called once per frames
     void Update()
     {
-        Vector3 newPosition = new Vector3(player.position.x + xoffset, player.position.y + yoffset, -10f);
+        Vector3 newPosition = new Vector3(player.position.x + xoffset, ypos, -10);
         transform.position = Vector3.Slerp(transform.position, newPosition, cameraFollowSpeed * Time.deltaTime);
     }
 }
