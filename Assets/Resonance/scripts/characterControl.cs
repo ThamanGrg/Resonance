@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class CharacterControl : MonoBehaviour
 {
     [Header("Movement")]
-    public float speed = 8f;
+    public float speed = 10f;
     public float jumpForce = 11f;
 
     [Header("Ground Check")]
@@ -24,16 +24,16 @@ public class CharacterControl : MonoBehaviour
 
     void Start()
     {
-        Camera cam = Camera.main;
+        // Camera cam = Camera.main;
 
-        float camHeight = cam.orthographicSize;
-        float camWidth = camHeight * cam.aspect;
-        playerHalfWidthX = GetComponent<SpriteRenderer>().bounds.size.x / 2;
+        // float camHeight = cam.orthographicSize;
+        // float camWidth = camHeight * cam.aspect;
+        // playerHalfWidthX = GetComponent<SpriteRenderer>().bounds.size.x / 2;
 
-        minX = cam.transform.position.x - camWidth + playerHalfWidthX;
-        maxX = cam.transform.position.x + camWidth - playerHalfWidthX;
+        // minX = cam.transform.position.x - camWidth + playerHalfWidthX;
+        // maxX = cam.transform.position.x + camWidth - playerHalfWidthX;
 
-        
+
     }
 
     void Awake()
@@ -62,9 +62,9 @@ public class CharacterControl : MonoBehaviour
             Jump();
         }
 
-        Vector2 pos = rb.position;
-        pos.x = Mathf.Clamp(pos.x, minX, maxX);
-        rb.position = pos;
+        // Vector2 pos = rb.position;
+        // pos.x = Mathf.Clamp(pos.x, minX, maxX);
+        // rb.position = pos;
     }
 
 
