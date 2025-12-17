@@ -5,10 +5,10 @@ using UnityEngine;
 public class cameraFollow : MonoBehaviour
 {
     public Transform player;
-    public float cameraFollowSpeed = 2f;
+    public float cameraFollowSpeed = 10f;
 
-    private float yoffset = 3.6f;
-    private float xoffset = 5.4f;
+    private float yoffset = 2.4f;
+    private float xoffset = 2.8f;
     void Start()
     {
         
