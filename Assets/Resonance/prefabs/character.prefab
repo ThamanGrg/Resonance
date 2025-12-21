@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1929089307275712626}
   - component: {fileID: 3222858316755843620}
-  - component: {fileID: 9030414725699818057}
   - component: {fileID: 7509095712670599676}
   - component: {fileID: 7227708214429984137}
   m_Layer: 0
@@ -82,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4541530823775549834, guid: a50a0eb32a11da14382fc38323dfd5e5, type: 3}
+  m_Sprite: {fileID: 6761142288038996542, guid: 65854b28bd9a05d48b6c8253bd01decd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,34 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9030414725699818057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3004521025459955731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4217a1ec684f24d9651e69c68e5cde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::characterControl
-  speed: 50
-  jumpForce: 11
-  contactFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 8
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!50 &7509095712670599676
 Rigidbody2D:
   serializedVersion: 5

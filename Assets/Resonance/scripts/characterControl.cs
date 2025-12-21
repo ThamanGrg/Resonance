@@ -6,6 +6,7 @@ public class CharacterControl : MonoBehaviour
     [Header("Movement")]
     public float speed = 10f;
     public float jumpForce = 11f;
+    public Animator anim;
 
     [Header("Ground Check")]
     public ContactFilter2D contactFilter;
@@ -20,8 +21,7 @@ public class CharacterControl : MonoBehaviour
 
     void Start()
     {
-
-
+        anim = GetComponent<Animator>();
     }
 
     void Awake()
@@ -38,7 +38,14 @@ public class CharacterControl : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        
+        if (move.ReadValue<Vector2>().x != 0)
+        {
+            anim.SetBool("walk", true);
+        }
+        else
+        {
+            anim.SetBool("walk", false);
+        }
     }
 
     [System.Obsolete]
